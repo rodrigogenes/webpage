@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vale por un viaje a París - Sofi</title>
+<style>
+body{
+  margin:0;
+  font-family:Georgia,serif;
+  color:#fff;
+  background:
+    linear-gradient(rgba(15,10,30,.45),rgba(15,10,30,.70)),
+    url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1800&q=80');
+  background-size:cover;
+  background-position:center;
+  min-height:100vh;
+}
+.card{
+  max-width:920px;
+  margin:40px auto;
+  padding:40px;
+  text-align:center;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(14px);
+  border-radius:30px;
+}
+.name{font-size:42px;color:#ffe08a;}
+h1{font-size:64px;margin:20px 0;}
+.subtitle{font-size:28px;font-style:italic;}
+.voucher{
+  background:rgba(255,255,255,.93);
+  color:#1b1b2f;
+  border:3px dashed #d4af37;
+  border-radius:22px;
+  padding:28px;
+  margin:30px auto;
+}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:30px 0;
+}
+.gallery img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:18px;
+}
+.message,.footer{
+  font-size:21px;
+  line-height:1.8;
+}
+.music-button{
+  margin-top:30px;
+  padding:16px 28px;
+  border:none;
+  border-radius:50px;
+  font-size:20px;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<audio id="musica" autoplay muted loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+
+<div style="font-size:46px;">🇫🇷 ✨ 🎂</div>
+
+<div class="name">
+👸 Para los 15 años de Sofi 👸
+</div>
+
+<h1>Vale por un viaje a París</h1>
+
+<p class="subtitle">
+Porque los sueños están para cumplirse… ¡París te espera! ✨🇫🇷
+</p>
+
+<div class="voucher">
+<h2>🎟️ Destino: París, Francia 🇫🇷</h2>
+<p><strong>Válido por:</strong> una experiencia inolvidable.</p>
+<p>Incluye aventuras, paseos, fotos, croissants y recuerdos para toda la vida.</p>
+</div>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1550340499-a6c60fc8287c?auto=format&fit=crop&w=900&q=80">
+</div>
+
+<div class="message">
+Querida Sofi:<br><br>
+Tus 15 años marcan el comienzo de una etapa llena de sueños, aventuras y momentos inolvidables.
+<br><br>
+Queremos regalarte uno de esos recuerdos que permanecen para siempre.
+<br><br>
+Este vale es para un viaje a París, la Ciudad de la Luz, donde te esperan calles llenas de historia,
+paisajes de ensueño, cafés encantadores y la imponente Torre Eiffel.
+<br><br>
+Deseamos que este viaje te inspire a seguir soñando en grande, a descubrir el mundo y a vivir experiencias maravillosas.
+</div>
+
+<div class="footer">
+<strong>Felices 15 años, Sofi</strong> 🎂✨
+<br><br>
+Que este sea solo el primero de muchos viajes y sueños por cumplir.
+<br><br>
+Con todo nuestro cariño,
+<br><br>
+❤️ <strong>Tío Loló y Tía Elsa</strong> ❤️
+<br><br>
+<small>Presentá este vale al momento de preparar las valijas. ✈️🇫🇷</small>
+</div>
+
+<button class="music-button" onclick="activarMusica()">
+🎵 Tocar para escuchar la canción
+</button>
+
+</div>
+
+<script>
+// Intenta iniciar el audio automáticamente (en silencio)
+const audio = document.getElementById('musica');
+audio.play().catch(() => {});
+
+// Al primer toque/clic se habilita el sonido
+function activarMusica() {
+  audio.muted = false;
+  audio.play();
+}
+
+document.addEventListener('click', function habilitar() {
+  audio.muted = false;
+  audio.play();
+  document.removeEventListener('click', habilitar);
+}, { once: true });
+</script>
+
+</body>
+</html>
